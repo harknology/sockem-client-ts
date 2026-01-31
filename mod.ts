@@ -63,7 +63,7 @@ export class Sockem {
   /**
    * Indefinitely receive events from the server.
    */
-  async *receive() {
+  async *receive(): AsyncGenerator<unknown, void, unknown> {
     try {
       while (true) {
         yield await this.receiveOne();
